@@ -32,6 +32,10 @@
       position:absolute;
       transition:0.2s;
     }
+
+    img{
+      border-radius:15px;
+    }
   </style>
 </head>
 
@@ -39,8 +43,15 @@
 
 <h1>Do you love me? ❤️</h1>
 
-<button class="yes">Yes ❤️</button>
+<!-- 🐱 CAT IMAGE -->
+<img src="https://placekitten.com/300/300" width="220">
+
+<br><br>
+
+<button class="yes" onclick="yes()">Yes ❤️</button>
 <button class="no" id="noBtn">No 💔</button>
+
+<p id="msg"></p>
 
 <script>
   let btn = document.getElementById("noBtn");
@@ -53,11 +64,14 @@
     btn.style.top = y + "px";
   }
 
-  // Mouse hover pe bhagega
+  // No button escape
   btn.addEventListener("mouseover", moveButton);
-
-  // Mobile touch pe bhi bhagega
   btn.addEventListener("touchstart", moveButton);
+
+  // Yes button action
+  function yes(){
+    document.getElementById("msg").innerHTML = "Aww ❤️ I love you too!";
+  }
 </script>
 
 </body>
