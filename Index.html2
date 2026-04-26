@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Game ❤️</title>
+
+  <style>
+    body{
+      text-align:center;
+      font-family:Arial;
+      background:#ffe6f0;
+      overflow:hidden;
+      height:100vh;
+    }
+
+    button{
+      padding:12px 25px;
+      font-size:18px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      margin:10px;
+    }
+
+    .yes{
+      background:green;
+      color:white;
+    }
+
+    .no{
+      background:red;
+      color:white;
+      position:absolute;
+      transition:0.2s;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Do you love me? ❤️</h1>
+
+<button class="yes">Yes ❤️</button>
+<button class="no" id="noBtn">No 💔</button>
+
+<script>
+  let btn = document.getElementById("noBtn");
+
+  function moveButton(){
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 100);
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+  }
+
+  // Mouse hover pe bhagega
+  btn.addEventListener("mouseover", moveButton);
+
+  // Mobile touch pe bhi bhagega
+  btn.addEventListener("touchstart", moveButton);
+</script>
+
+</body>
+</html>
